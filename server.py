@@ -9,14 +9,14 @@ mcp = FastMCP(name="mcp_app", stateless_http=True)
 
 
 @mcp.tool(
-    name="get_date",
-    description="Get the current date and time in YYYY-MM-DD HH:MM:SS format",
+    name="get_current_date",
+    description="Get the current date and time in DD-MM-YYYY HH:MM:SS format",
 )
 def get_date() -> str:
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 @mcp.tool(
-    name="get_weather",
+    name="get_current_weather",
     description="Get the current weather for a given city"
 )
 def get_weather(city: str) -> str:

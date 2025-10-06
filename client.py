@@ -8,9 +8,18 @@ headers = {
 
 body = {
     "jsonrpc": "2.0",
-    "method": "tools/list",
+    "method": "tools/call",
     "id": 1,
-    "params": {},
+    "params": {
+        "name":"get_current_date",
+        "arguments": {},
+    },
+   # "params": {
+   #    "name":"get_current_weather",
+   #   "arguments": {
+   #      "city": "tokyo"
+   # },
+   # },
 }
 
 response = requests.post(url, headers=headers, json=body)
